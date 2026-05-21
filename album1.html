@@ -6,6 +6,17 @@
     <title>Album One - Tracklist</title>
     <style>
         /* CSS: THE STYLE AND LAYOUT */
+        /* Start the counter at 10, so the first track becomes 11 */
+tbody {
+    counter-reset: track-counter 0; 
+}
+
+/* Automatically inject the counted number into the track-num cell */
+.track-num::before {
+    counter-increment: track-counter;
+    content: counter(track-counter);
+}
+        
         body {
             margin: 0;
             padding: 0;
